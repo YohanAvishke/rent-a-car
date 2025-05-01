@@ -8,6 +8,3 @@ struct RentACarApp: App {
         }
     }
 }
-
-// this is testing.
-// this is another change.
