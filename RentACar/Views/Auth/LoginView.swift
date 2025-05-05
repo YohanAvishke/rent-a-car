@@ -19,7 +19,7 @@ struct LoginView: View {
 
                 Spacer()
 
-                Text("🚗 Welcome to RentACar")
+                Text("🚗 Welcome!")
                     .font(.largeTitle)
                     .bold()
 
