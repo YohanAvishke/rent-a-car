@@ -16,12 +16,12 @@ struct ContactUsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("联系内容")) {
-                    TextField("主题", text: $subject)
+                Section(header: Text("content")) {
+                    TextField("Subject", text: $subject)
                     
                     ZStack(alignment: .topLeading) {
                         if message.isEmpty {
-                            Text("请输入您的问题或反馈...")
+                            Text("Please write your questions or feedback...")
                                 .foregroundColor(.gray)
                                 .padding(.top, 8)
                                 .padding(.leading, 4)
@@ -33,14 +33,14 @@ struct ContactUsView: View {
                 }
                 
                 Section {
-                    Button("提交") {
+                    Button("submit") {
                         // 提交逻辑
                         showSuccessAlert = true
                     }
                     .foregroundColor(.blue)
                 }
                 
-                Section(header: Text("其他联系方式")) {
+                Section(header: Text("Other Contact")) {
                     HStack {
                         Image(systemName: "envelope")
                         Text("support@rentacar.com")
@@ -48,20 +48,20 @@ struct ContactUsView: View {
                     
                     HStack {
                         Image(systemName: "phone")
-                        Text("+86 123 4567 8910")
+                        Text("+61 123 4567 8910")
                     }
                 }
             }
-            .navigationTitle("联系我们")
-            .navigationBarItems(trailing: Button("关闭") {
+            .navigationTitle("Contact Us")
+            .navigationBarItems(trailing: Button("Close") {
                 dismiss()
             })
-            .alert("提交成功", isPresented: $showSuccessAlert) {
-                Button("确定", role: .none) {
+            .alert("submit successfully", isPresented: $showSuccessAlert) {
+                Button("comfirm", role: .none) {
                     dismiss()
                 }
             } message: {
-                Text("我们会尽快回复您的消息")
+                Text("We will reply you in 24 hours")
             }
         }
     }

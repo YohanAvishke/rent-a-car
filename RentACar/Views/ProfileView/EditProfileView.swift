@@ -18,23 +18,23 @@ struct EditProfileView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("个人信息")) {
-                TextField("姓名", text: $name)
-                TextField("电子邮箱", text: $email)
+            Section(header: Text("Infomation")) {
+                TextField("Name", text: $name)
+                TextField("Email", text: $email)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
-                TextField("电话", text: $phone)
+                TextField("Phone", text: $phone)
                     .keyboardType(.phonePad)
             }
             
             Section {
-                Button("保存修改") {
+                Button("Save") {
                     showSaveAlert = true
                 }
                 .foregroundColor(.blue)
             }
         }
-        .navigationTitle("编辑个人信息")
+        .navigationTitle("Edit Information")
         .onAppear {
             // 加载当前用户信息
             if let user = userManager.currentUser {
@@ -43,8 +43,8 @@ struct EditProfileView: View {
                 phone = user.phone
             }
         }
-        .alert("确认保存修改?", isPresented: $showSaveAlert) {
-            Button("保存", role: .none) {
+        .alert("Are you sure to save the changes?", isPresented: $showSaveAlert) {
+            Button("Save", role: .none) {
                 // 保存逻辑
                 if let user = userManager.currentUser {
                     user.name = name
@@ -54,7 +54,7 @@ struct EditProfileView: View {
                 }
                 dismiss()
             }
-            Button("取消", role: .cancel) { }
+            Button("Cancle", role: .cancel) { }
         }
     }
 }

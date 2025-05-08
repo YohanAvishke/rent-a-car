@@ -23,7 +23,7 @@ struct BookingHistoryView: View {
                 BookingHistoryItemView(booking: booking)
             }
         }
-        .navigationTitle("预订历史")
+        .navigationTitle("Booking History")
         .listStyle(InsetGroupedListStyle())
     }
 }
@@ -66,16 +66,16 @@ struct BookingHistoryItemView: View {
                     .cornerRadius(4)
             }
             
-            Text("开始日期: \(formatDate(booking.startDate))")
+            Text("Starting Date: \(formatDate(booking.startDate))")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
-            Text("结束日期: \(formatDate(booking.endDate))")
+            Text("End Date: \(formatDate(booking.endDate))")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
             if booking.status == .Confirmed {
-                Button("取消预订") {
+                Button("Cancle booking") {
                     // 取消预订逻辑
                 }
                 .foregroundColor(.red)

@@ -20,7 +20,7 @@ struct LikedVehiclesView: View {
                 LikedVehicleItemView(vehicle: vehicle)
             }
         }
-        .navigationTitle("收藏的车辆")
+        .navigationTitle("Liked Vehicles")
         .listStyle(InsetGroupedListStyle())
     }
 }
@@ -53,7 +53,7 @@ struct LikedVehicleItemView: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 
-                Text("$\(vehicle.pricePerDay)/天")
+                Text("$\(vehicle.pricePerDay)/Day")
                     .font(.subheadline)
             }
             
