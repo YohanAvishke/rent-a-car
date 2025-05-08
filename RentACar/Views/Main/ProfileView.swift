@@ -89,40 +89,7 @@ struct ProfileView: View {
     }
 }
 
-
-struct EditProfileView: View {
-    var body: some View {
-        Text("Edit Personal Information Page")
-    }
-}
-
-struct BookingHistoryView: View {
-    var body: some View {
-        Text("Booking History Page")
-    }
-}
-
-struct LikedVehiclesView: View {
-    var body: some View {
-        Text("Liked Vehicles Page")
-    }
-}
-
-struct ContactUsView: View {
-    var body: some View {
-        VStack {
-            Text("Contact Us")
-                .font(.largeTitle)
-            Text("Please send your feedback to support@rentacar.com")
-                .padding()
-            Spacer()
-        }
-    }
-}
-
 #Preview {
     ProfileView()
         .environmentObject(UserManager())
 }
-
-

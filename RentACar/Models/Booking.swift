@@ -1,11 +1,11 @@
 import Foundation
 import SwiftData
 
-enum BookingStatus: Codable {
-    case Pending
-    case Confirmed
-    case Cancelled
-    case Completed
+enum BookingStatus: String, Codable {
+    case Pending = "Pending"
+    case Confirmed = "Confirmed"
+    case Cancelled = "Cancelled"
+    case Completed = "Completed"
 }
 
 @Model
