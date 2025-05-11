@@ -21,3 +21,23 @@ class User {
         self.bookings = bookings
     }
 }
+
+extension User {
+    static var john: User {
+        User(
+            name: "John Doe",
+            email: "john@example.com",
+            phone: "0412345678",
+            passwordHash: "hashed_password"
+        )
+    }
+    
+    static var sarah: User {
+        User(
+            name: "Sarah White",
+            email: "sarah@example.com",
+            phone: "0423456789",
+            passwordHash: "hashed_password"
+        )
+    }
+}

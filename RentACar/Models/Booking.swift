@@ -29,3 +29,33 @@ class Booking {
         self.bookingStatus = bookingStatus
     }
 }
+
+extension Booking {
+    static func booking1(user: User,
+                         dealer: Dealer,
+                         vehicle: Vehicle) -> Booking {
+        Booking(
+            user: user,
+            dealer: dealer,
+            vehicle: vehicle,
+            startDate: .now,
+            endDate: .now.addingTimeInterval(86400 * 3),
+            totalPrice: 3 * vehicle.pricePerDay,
+            bookingStatus: .Confirmed
+        )
+    }
+    
+    static func booking2(user: User,
+                         dealer: Dealer,
+                         vehicle: Vehicle) -> Booking {
+        Booking(
+            user: user,
+            dealer: dealer,
+            vehicle: vehicle,
+            startDate: .now.addingTimeInterval(86400 * 5),
+            endDate: .now.addingTimeInterval(86400 * 7),
+            totalPrice: 2 * vehicle.pricePerDay,
+            bookingStatus: .Pending
+        )
+    }
+}

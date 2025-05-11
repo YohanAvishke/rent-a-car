@@ -30,3 +30,28 @@ class Dealer {
     }
 }
 
+extension Dealer {
+    static var swiftMotors: Dealer {
+        Dealer(
+            name: "Swift Motors",
+            address: "123 Swift Lane",
+            email: "dealer@swiftmotors.com",
+            managerName: "Alice Johnson",
+            registrationDate: .now,
+            cancelationPolicy: "Full refund up to 24 hours before rental.",
+            vehicles: []
+        )
+    }
+    
+    static var apexRentals: Dealer {
+        Dealer(
+            name: "Apex Rentals",
+            address: "456 Apex Road",
+            email: "info@apexrentals.com",
+            managerName: "Mark Lee",
+            registrationDate: .now,
+            cancelationPolicy: "Cancellations within 12 hours may incur a fee.",
+            vehicles: []
+        )
+    }
+}

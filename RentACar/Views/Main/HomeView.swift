@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  RentACar
-//
-//  Created by Gavin Li on 1/5/2025.
-//
-
 import SwiftUI
 
 struct HomeView: View {

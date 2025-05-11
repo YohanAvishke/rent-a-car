@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  RentACar
-//
-//  Created by Yohan Ediriweera on 2025-04-23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
