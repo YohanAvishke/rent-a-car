@@ -79,8 +79,12 @@ struct ExploreView: View {
                 ScrollView {
                     VStack(spacing: 20) {
                         ForEach(filteredVehicles) { vehicle in
-                            // Todo add navigation to detail view
-                            VehicleCardView(vehicle: vehicle)
+                            NavigationLink(
+                                destination: VehicleDetailView(
+                                    vehicle: vehicle)) {
+                                        VehicleCardView(vehicle: vehicle)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
                         }
                         
                         if filteredVehicles.count < fullFilteredList.count {
