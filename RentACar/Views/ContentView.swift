@@ -1,16 +1,9 @@
-//
-//  ContentView.swift
-//  RentACar
-//
-//  Created by Yohan Ediriweera on 2025-04-23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
         TabView {
-            HomeView()
+            DealerListView()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
@@ -32,5 +25,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(UserManager())
 }

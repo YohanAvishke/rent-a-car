@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-enum VehicleStatus: Codable {
+enum VehicleStatus: String, Codable {
     case Available
     case Rented
     case Maintenance
@@ -21,6 +21,7 @@ class Vehicle {
     @Attribute(.unique)
     var licensePlate: String
     var vehicleStatus: VehicleStatus
+    @Attribute(originalName: "imageUrls")
     var imageUrls: [String]
     var vehicleDescription: String?
     @Relationship(deleteRule: .cascade, inverse: \Booking.vehicle)
