@@ -1,0 +1,523 @@
+{
+    "vehicleTypes": [
+        {
+            "name": "SUV"
+        },
+        {
+            "name": "Sedan"
+        }
+    ],
+    "dealers": [
+        {
+            "name": "Sydney Auto Rentals",
+            "address": "120 George Street, Sydney NSW 2000",
+            "latitude": -33.8688,
+            "longitude": 151.2093,
+            "email": "sydney@autorentals.com",
+            "managerName": "Emily Watson",
+            "registrationDate": "2023-05-01T00:00:00Z",
+            "cancelationPolicy": "Full refund up to 24 hours before rental."
+        },
+        {
+            "name": "Melbourne Drive Co",
+            "address": "45 Collins Street, Melbourne VIC 3000",
+            "latitude": -37.8136,
+            "longitude": 144.9631,
+            "email": "melbourne@driveco.com",
+            "managerName": "James Thompson",
+            "registrationDate": "2023-05-10T00:00:00Z",
+            "cancelationPolicy": "Cancellations within 12 hours may incur a fee."
+        },
+        {
+            "name": "Brisbane Car Express",
+            "address": "200 Queen Street, Brisbane QLD 4000",
+            "latitude": -27.4698,
+            "longitude": 153.0251,
+            "email": "brisbane@carexpress.com",
+            "managerName": "Olivia Chen",
+            "registrationDate": "2023-06-15T00:00:00Z",
+            "cancelationPolicy": "Full refund up to 24 hours before rental."
+        },
+        {
+            "name": "Adelaide Vehicle Hub",
+            "address": "85 King William Street, Adelaide SA 5000",
+            "latitude": -34.9285,
+            "longitude": 138.6007,
+            "email": "adelaide@vehiclehub.com",
+            "managerName": "Liam Nguyen",
+            "registrationDate": "2023-07-20T00:00:00Z",
+            "cancelationPolicy": "Cancellations may incur a fee."
+        },
+        {
+            "name": "Perth Wheels",
+            "address": "10 St Georges Terrace, Perth WA 6000",
+            "latitude": -31.9505,
+            "longitude": 115.8605,
+            "email": "perth@wheels.com",
+            "managerName": "Chloe Robinson",
+            "registrationDate": "2023-08-01T00:00:00Z",
+            "cancelationPolicy": "Full refund up to 24 hours before rental."
+        }
+    ],
+    "vehicles": [
+        {
+            "dealerEmail": "sydney@autorentals.com",
+            "vehicleType": "SUV",
+            "modelName": "Model X",
+            "brandName": "Tesla",
+            "createdYear": 2019,
+            "mileage": 10000,
+            "capacity": 5,
+            "fuelType": "Electric",
+            "pricePerDay": 85.0,
+            "licensePlate": "TE101",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "model_x.jpg"
+            ],
+            "vehicleDescription": "Model X by Tesla is perfect for your journey."
+        },
+        {
+            "dealerEmail": "sydney@autorentals.com",
+            "vehicleType": "SUV",
+            "modelName": "Outlander",
+            "brandName": "Mitsubishi",
+            "createdYear": 2020,
+            "mileage": 20000,
+            "capacity": 5,
+            "fuelType": "Hybrid",
+            "pricePerDay": 95.0,
+            "licensePlate": "MI102",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "outlander.jpg"
+            ],
+            "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
+        },
+        {
+            "dealerEmail": "sydney@autorentals.com",
+            "vehicleType": "SUV",
+            "modelName": "CX-5",
+            "brandName": "Mazda",
+            "createdYear": 2021,
+            "mileage": 30000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 105.0,
+            "licensePlate": "MA103",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "cx-5.jpg"
+            ],
+            "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "sydney@autorentals.com",
+            "vehicleType": "Sedan",
+            "modelName": "Camry",
+            "brandName": "Toyota",
+            "createdYear": 2022,
+            "mileage": 40000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 115.0,
+            "licensePlate": "TO104",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "camry.jpg"
+            ],
+            "vehicleDescription": "Camry by Toyota is perfect for your journey."
+        },
+        {
+            "dealerEmail": "sydney@autorentals.com",
+            "vehicleType": "Sedan",
+            "modelName": "Accord",
+            "brandName": "Honda",
+            "createdYear": 2023,
+            "mileage": 50000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 125.0,
+            "licensePlate": "HO105",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "accord.jpg"
+            ],
+            "vehicleDescription": "Accord by Honda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "melbourne@driveco.com",
+            "vehicleType": "SUV",
+            "modelName": "Model X",
+            "brandName": "Tesla",
+            "createdYear": 2019,
+            "mileage": 10000,
+            "capacity": 5,
+            "fuelType": "Electric",
+            "pricePerDay": 85.0,
+            "licensePlate": "TE201",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "model_x.jpg"
+            ],
+            "vehicleDescription": "Model X by Tesla is perfect for your journey."
+        },
+        {
+            "dealerEmail": "melbourne@driveco.com",
+            "vehicleType": "SUV",
+            "modelName": "Outlander",
+            "brandName": "Mitsubishi",
+            "createdYear": 2020,
+            "mileage": 20000,
+            "capacity": 5,
+            "fuelType": "Hybrid",
+            "pricePerDay": 95.0,
+            "licensePlate": "MI202",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "outlander.jpg"
+            ],
+            "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
+        },
+        {
+            "dealerEmail": "melbourne@driveco.com",
+            "vehicleType": "SUV",
+            "modelName": "CX-5",
+            "brandName": "Mazda",
+            "createdYear": 2021,
+            "mileage": 30000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 105.0,
+            "licensePlate": "MA203",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "cx-5.jpg"
+            ],
+            "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "melbourne@driveco.com",
+            "vehicleType": "Sedan",
+            "modelName": "Camry",
+            "brandName": "Toyota",
+            "createdYear": 2022,
+            "mileage": 40000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 115.0,
+            "licensePlate": "TO204",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "camry.jpg"
+            ],
+            "vehicleDescription": "Camry by Toyota is perfect for your journey."
+        },
+        {
+            "dealerEmail": "melbourne@driveco.com",
+            "vehicleType": "Sedan",
+            "modelName": "Accord",
+            "brandName": "Honda",
+            "createdYear": 2023,
+            "mileage": 50000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 125.0,
+            "licensePlate": "HO205",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "accord.jpg"
+            ],
+            "vehicleDescription": "Accord by Honda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "brisbane@carexpress.com",
+            "vehicleType": "SUV",
+            "modelName": "Model X",
+            "brandName": "Tesla",
+            "createdYear": 2019,
+            "mileage": 10000,
+            "capacity": 5,
+            "fuelType": "Electric",
+            "pricePerDay": 85.0,
+            "licensePlate": "TE301",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "model_x.jpg"
+            ],
+            "vehicleDescription": "Model X by Tesla is perfect for your journey."
+        },
+        {
+            "dealerEmail": "brisbane@carexpress.com",
+            "vehicleType": "SUV",
+            "modelName": "Outlander",
+            "brandName": "Mitsubishi",
+            "createdYear": 2020,
+            "mileage": 20000,
+            "capacity": 5,
+            "fuelType": "Hybrid",
+            "pricePerDay": 95.0,
+            "licensePlate": "MI302",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "outlander.jpg"
+            ],
+            "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
+        },
+        {
+            "dealerEmail": "brisbane@carexpress.com",
+            "vehicleType": "SUV",
+            "modelName": "CX-5",
+            "brandName": "Mazda",
+            "createdYear": 2021,
+            "mileage": 30000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 105.0,
+            "licensePlate": "MA303",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "cx-5.jpg"
+            ],
+            "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "brisbane@carexpress.com",
+            "vehicleType": "Sedan",
+            "modelName": "Camry",
+            "brandName": "Toyota",
+            "createdYear": 2022,
+            "mileage": 40000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 115.0,
+            "licensePlate": "TO304",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "camry.jpg"
+            ],
+            "vehicleDescription": "Camry by Toyota is perfect for your journey."
+        },
+        {
+            "dealerEmail": "brisbane@carexpress.com",
+            "vehicleType": "Sedan",
+            "modelName": "Accord",
+            "brandName": "Honda",
+            "createdYear": 2023,
+            "mileage": 50000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 125.0,
+            "licensePlate": "HO305",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "accord.jpg"
+            ],
+            "vehicleDescription": "Accord by Honda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "adelaide@vehiclehub.com",
+            "vehicleType": "SUV",
+            "modelName": "Model X",
+            "brandName": "Tesla",
+            "createdYear": 2019,
+            "mileage": 10000,
+            "capacity": 5,
+            "fuelType": "Electric",
+            "pricePerDay": 85.0,
+            "licensePlate": "TE401",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "model_x.jpg"
+            ],
+            "vehicleDescription": "Model X by Tesla is perfect for your journey."
+        },
+        {
+            "dealerEmail": "adelaide@vehiclehub.com",
+            "vehicleType": "SUV",
+            "modelName": "Outlander",
+            "brandName": "Mitsubishi",
+            "createdYear": 2020,
+            "mileage": 20000,
+            "capacity": 5,
+            "fuelType": "Hybrid",
+            "pricePerDay": 95.0,
+            "licensePlate": "MI402",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "outlander.jpg"
+            ],
+            "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
+        },
+        {
+            "dealerEmail": "adelaide@vehiclehub.com",
+            "vehicleType": "SUV",
+            "modelName": "CX-5",
+            "brandName": "Mazda",
+            "createdYear": 2021,
+            "mileage": 30000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 105.0,
+            "licensePlate": "MA403",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "cx-5.jpg"
+            ],
+            "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "adelaide@vehiclehub.com",
+            "vehicleType": "Sedan",
+            "modelName": "Camry",
+            "brandName": "Toyota",
+            "createdYear": 2022,
+            "mileage": 40000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 115.0,
+            "licensePlate": "TO404",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "camry.jpg"
+            ],
+            "vehicleDescription": "Camry by Toyota is perfect for your journey."
+        },
+        {
+            "dealerEmail": "adelaide@vehiclehub.com",
+            "vehicleType": "Sedan",
+            "modelName": "Accord",
+            "brandName": "Honda",
+            "createdYear": 2023,
+            "mileage": 50000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 125.0,
+            "licensePlate": "HO405",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "accord.jpg"
+            ],
+            "vehicleDescription": "Accord by Honda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "perth@wheels.com",
+            "vehicleType": "SUV",
+            "modelName": "Model X",
+            "brandName": "Tesla",
+            "createdYear": 2019,
+            "mileage": 10000,
+            "capacity": 5,
+            "fuelType": "Electric",
+            "pricePerDay": 85.0,
+            "licensePlate": "TE501",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "model_x.jpg"
+            ],
+            "vehicleDescription": "Model X by Tesla is perfect for your journey."
+        },
+        {
+            "dealerEmail": "perth@wheels.com",
+            "vehicleType": "SUV",
+            "modelName": "Outlander",
+            "brandName": "Mitsubishi",
+            "createdYear": 2020,
+            "mileage": 20000,
+            "capacity": 5,
+            "fuelType": "Hybrid",
+            "pricePerDay": 95.0,
+            "licensePlate": "MI502",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "outlander.jpg"
+            ],
+            "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
+        },
+        {
+            "dealerEmail": "perth@wheels.com",
+            "vehicleType": "SUV",
+            "modelName": "CX-5",
+            "brandName": "Mazda",
+            "createdYear": 2021,
+            "mileage": 30000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 105.0,
+            "licensePlate": "MA503",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "cx-5.jpg"
+            ],
+            "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
+        },
+        {
+            "dealerEmail": "perth@wheels.com",
+            "vehicleType": "Sedan",
+            "modelName": "Camry",
+            "brandName": "Toyota",
+            "createdYear": 2022,
+            "mileage": 40000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 115.0,
+            "licensePlate": "TO504",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "camry.jpg"
+            ],
+            "vehicleDescription": "Camry by Toyota is perfect for your journey."
+        },
+        {
+            "dealerEmail": "perth@wheels.com",
+            "vehicleType": "Sedan",
+            "modelName": "Accord",
+            "brandName": "Honda",
+            "createdYear": 2023,
+            "mileage": 50000,
+            "capacity": 5,
+            "fuelType": "Petrol",
+            "pricePerDay": 125.0,
+            "licensePlate": "HO505",
+            "vehicleStatus": "Available",
+            "imageUrls": [
+                "accord.jpg"
+            ],
+            "vehicleDescription": "Accord by Honda is perfect for your journey."
+        }
+    ],
+    "users": [
+        {
+            "name": "John Doe",
+            "email": "john@example.com",
+            "phone": "0412345678",
+            "passwordHash": "hashed_password"
+        },
+        {
+            "name": "Sarah White",
+            "email": "sarah@example.com",
+            "phone": "0423456789",
+            "passwordHash": "hashed_password"
+        }
+    ],
+    "bookings": [
+        {
+            "userEmail": "john@example.com",
+            "dealerEmail": "sydney@autorentals.com",
+            "vehicleLicense": "TE11",
+            "startDate": "2024-05-02T00:00:00Z",
+            "endDate": "2024-05-05T00:00:00Z",
+            "totalPrice": 255.0,
+            "bookingStatus": "Confirmed"
+        },
+        {
+            "userEmail": "sarah@example.com",
+            "dealerEmail": "melbourne@driveco.com",
+            "vehicleLicense": "MI21",
+            "startDate": "2024-05-06T00:00:00Z",
+            "endDate": "2024-05-08T00:00:00Z",
+            "totalPrice": 190.0,
+            "bookingStatus": "Pending"
+        }
+    ]
+}

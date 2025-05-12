@@ -19,8 +19,3 @@ struct DealerListView: View {
         }
     }
 }
-
-
-#Preview {
-    DealerListView()
-}

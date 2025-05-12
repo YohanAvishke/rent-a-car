@@ -26,10 +26,14 @@ struct DealerCardView: View {
                         latitude: dealer.latitude,
                         longitude: dealer.longitude
                     ),
-                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                    span: MKCoordinateSpan(latitudeDelta: 0.01,
+                                           longitudeDelta: 0.01)
                 )
             ), annotationItems: [dealer]) { dealer in
-                MapMarker(coordinate: CLLocationCoordinate2D(latitude: dealer.latitude, longitude: dealer.longitude))
+                MapMarker(coordinate: CLLocationCoordinate2D(
+                    latitude: dealer.latitude,
+                    longitude: dealer.longitude
+                ))
             }
             .frame(height: 180)
             .cornerRadius(10)
@@ -40,13 +44,3 @@ struct DealerCardView: View {
         .shadow(radius: 4)
     }
 }
-
-// To make Dealer conform to Identifiable for map annotations
-extension Dealer: Identifiable {
-    var id: String { email }
-}
-
-
-//#Preview {
-//    DealerCardView()
-//}

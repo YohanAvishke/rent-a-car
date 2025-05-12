@@ -2,7 +2,8 @@ import Foundation
 import SwiftData
 
 @Model
-class Dealer {
+class Dealer: Identifiable {
+    var id: String { email }
     var name: String
     @Attribute(.unique)
     var address: String
@@ -32,37 +33,5 @@ class Dealer {
         self.cancelationPolicy = cancelationPolicy
         self.vehicles = vehicles
         self.bookings = bookings
-    }
-}
-
-extension Dealer {
-    static var swiftMotors: Dealer {
-        let dealer = Dealer(
-            name: "Swift Motors",
-            address: "123 Swift Lane",
-            latitude: -33.8688,
-            longitude: 151.2093,
-            email: "dealer@swiftmotors.com",
-            managerName: "Alice Johnson",
-            registrationDate: .now,
-            cancelationPolicy: "Full refund up to 24 hours before rental.",
-            vehicles: []
-        )
-        return dealer
-    }
-    
-    static var apexRentals: Dealer {
-        let dealer = Dealer(
-            name: "Apex Rentals",
-            address: "456 Apex Road",
-            latitude: -37.8136,
-            longitude: 144.9631,
-            email: "info@apexrentals.com",
-            managerName: "Mark Lee",
-            registrationDate: .now,
-            cancelationPolicy: "Cancellations within 12 hours may incur a fee.",
-            vehicles: []
-        )
-        return dealer
     }
 }

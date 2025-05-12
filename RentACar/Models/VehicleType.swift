@@ -13,13 +13,3 @@ class VehicleType {
         self.vehicles = vehicles
     }
 }
-
-extension VehicleType {
-    static var suv: VehicleType {
-        VehicleType(name: "SUV", vehicles: [])
-    }
-    
-    static var sedan: VehicleType {
-        VehicleType(name: "Sedan", vehicles: [])
-    }
-}

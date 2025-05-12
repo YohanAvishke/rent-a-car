@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-enum VehicleStatus: Codable {
+enum VehicleStatus: String, Codable {
     case Available
     case Rented
     case Maintenance
@@ -47,79 +47,5 @@ class Vehicle {
         self.imageUrls = imageUrls
         self.vehicleDescription = vehicleDescription
         self.bookings = bookings
-    }
-}
-
-extension Vehicle {
-    static func teslaX(dealer: Dealer) -> Vehicle {
-        Vehicle(
-            dealer: dealer,
-            vehicleType: .suv,
-            modelName: "Model X",
-            brandName: "Tesla",
-            createdYear: 2022,
-            mileage: 10000,
-            capacity: 5,
-            fuelType: "Electric",
-            pricePerDay: 150.0,
-            licensePlate: "TESLA-X",
-            vehicleStatus: .Available,
-            imageUrls: ["tesla_modelx.jpg"],
-            vehicleDescription: "Luxury electric SUV"
-        )
-    }
-    
-    static func outlander(dealer: Dealer) -> Vehicle {
-        Vehicle(
-            dealer: dealer,
-            vehicleType: .suv,
-            modelName: "Outlander",
-            brandName: "Mitsubishi",
-            createdYear: 2021,
-            mileage: 12000,
-            capacity: 5,
-            fuelType: "Hybrid",
-            pricePerDay: 99.0,
-            licensePlate: "MIT-456",
-            vehicleStatus: .Available,
-            imageUrls: ["outlander.jpg"],
-            vehicleDescription: "Reliable and efficient"
-        )
-    }
-    
-    static func camry(dealer: Dealer) -> Vehicle {
-        Vehicle(
-            dealer: dealer,
-            vehicleType: .sedan,
-            modelName: "Camry",
-            brandName: "Toyota",
-            createdYear: 2020,
-            mileage: 25000,
-            capacity: 5,
-            fuelType: "Petrol",
-            pricePerDay: 80.0,
-            licensePlate: "TOY-789",
-            vehicleStatus: .Available,
-            imageUrls: ["camry.jpg"],
-            vehicleDescription: "Comfortable sedan for city travel"
-        )
-    }
-    
-    static func accord(dealer: Dealer) -> Vehicle {
-        Vehicle(
-            dealer: dealer,
-            vehicleType: .sedan,
-            modelName: "Accord",
-            brandName: "Honda",
-            createdYear: 2019,
-            mileage: 30000,
-            capacity: 5,
-            fuelType: "Petrol",
-            pricePerDay: 75.0,
-            licensePlate: "HON-321",
-            vehicleStatus: .Available,
-            imageUrls: ["accord.jpg"],
-            vehicleDescription: "Great for families"
-        )
     }
 }
