@@ -1,8 +1,21 @@
 import SwiftUI
+import SwiftData
 import MapKit
 
 struct DealerCardView: View {
     var dealer: Dealer
+    @State private var cameraPosition: MapCameraPosition
+    
+    init(dealer: Dealer) {
+        self.dealer = dealer
+        // Configuring the camera position for the map
+        let region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: dealer.latitude,
+                                           longitude: dealer.longitude),
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        )
+        _cameraPosition = State(initialValue: .region(region))
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -20,17 +33,8 @@ struct DealerCardView: View {
             Text("🧑‍💼 Manager: \(dealer.managerName)")
                 .font(.subheadline)
             
-            Map(coordinateRegion: .constant(
-                MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(
-                        latitude: dealer.latitude,
-                        longitude: dealer.longitude
-                    ),
-                    span: MKCoordinateSpan(latitudeDelta: 0.01,
-                                           longitudeDelta: 0.01)
-                )
-            ), annotationItems: [dealer]) { dealer in
-                MapMarker(coordinate: CLLocationCoordinate2D(
+            Map(position: $cameraPosition) {
+                Marker(dealer.name, coordinate: CLLocationCoordinate2D(
                     latitude: dealer.latitude,
                     longitude: dealer.longitude
                 ))
