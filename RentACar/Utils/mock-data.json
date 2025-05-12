@@ -1,11 +1,7 @@
 {
     "vehicleTypes": [
-        {
-            "name": "SUV"
-        },
-        {
-            "name": "Sedan"
-        }
+        { "name": "SUV" },
+        { "name": "Sedan" }
     ],
     "dealers": [
         {
@@ -16,7 +12,7 @@
             "email": "sydney@autorentals.com",
             "managerName": "Emily Watson",
             "registrationDate": "2023-05-01T00:00:00Z",
-            "cancelationPolicy": "Full refund up to 24 hours before rental."
+            "cancelationPolicy": "Cancellations made more than 24 hours prior to pickup are eligible for a full refund. Cancellations made within 24 hours will incur a 15% fee. No-shows are non-refundable."
         },
         {
             "name": "Melbourne Drive Co",
@@ -26,7 +22,7 @@
             "email": "melbourne@driveco.com",
             "managerName": "James Thompson",
             "registrationDate": "2023-05-10T00:00:00Z",
-            "cancelationPolicy": "Cancellations within 12 hours may incur a fee."
+            "cancelationPolicy": "Customers can cancel up to 12 hours before pickup for a 90% refund. Cancellations under 12 hours are subject to a 25% cancellation fee. In the event of a no-show, the full rental charge applies."
         },
         {
             "name": "Brisbane Car Express",
@@ -36,7 +32,7 @@
             "email": "brisbane@carexpress.com",
             "managerName": "Olivia Chen",
             "registrationDate": "2023-06-15T00:00:00Z",
-            "cancelationPolicy": "Full refund up to 24 hours before rental."
+            "cancelationPolicy": "Full refunds are available for cancellations made more than 24 hours before pickup. A 10% processing fee applies for cancellations between 12 and 24 hours. No refund is given if canceled within 12 hours or in case of no-show."
         },
         {
             "name": "Adelaide Vehicle Hub",
@@ -46,7 +42,7 @@
             "email": "adelaide@vehiclehub.com",
             "managerName": "Liam Nguyen",
             "registrationDate": "2023-07-20T00:00:00Z",
-            "cancelationPolicy": "Cancellations may incur a fee."
+            "cancelationPolicy": "Cancellations made more than 48 hours in advance are fully refundable. Between 24–48 hours, a 20% fee applies. Under 24 hours, the cancellation fee is 40%. No refund for missed pickups."
         },
         {
             "name": "Perth Wheels",
@@ -56,7 +52,7 @@
             "email": "perth@wheels.com",
             "managerName": "Chloe Robinson",
             "registrationDate": "2023-08-01T00:00:00Z",
-            "cancelationPolicy": "Full refund up to 24 hours before rental."
+            "cancelationPolicy": "A full refund is granted if canceled at least 24 hours before pickup. For same-day cancellations, a fixed fee of $50 applies. No refund is offered for cancellations within 2 hours of pickup."
         }
     ],
     "vehicles": [

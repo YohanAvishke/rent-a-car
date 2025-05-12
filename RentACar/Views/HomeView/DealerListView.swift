@@ -1,6 +1,5 @@
 import SwiftUI
 import SwiftData
-import MapKit
 
 struct DealerListView: View {
     @Query var dealers: [Dealer]
@@ -10,7 +9,10 @@ struct DealerListView: View {
             ScrollView {
                 VStack(spacing: 16) {
                     ForEach(dealers, id: \.email) { dealer in
-                        DealerCardView(dealer: dealer)
+                        NavigationLink(destination:
+                                        DealerDetailView(dealer: dealer)) {
+                            DealerCardView(dealer: dealer)
+                        }
                     }
                 }
                 .padding()

@@ -22,6 +22,7 @@ struct DealerCardView: View {
             Text(dealer.name)
                 .font(.title2)
                 .bold()
+                .foregroundColor(.primary)
             
             Text(dealer.address)
                 .font(.subheadline)
