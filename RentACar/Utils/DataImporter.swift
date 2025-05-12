@@ -1,93 +1,101 @@
 import Foundation
 import SwiftData
 
+/// Class used to populate Model context with mock data
 final class DataImporter {
     static func importInto(_ context: ModelContext) {
+        // fetch the mock data
         guard let importModel = ImportModel.fetchMockData() else {
             print("Could not fetch mock data")
             return
         }
         
+        // Map object are used to when another object required the mapped object
+        // as an arguemnt
         var vehicleTypeMap: [String: VehicleType] = [:]
-        for vt in importModel.vehicleTypes {
-            let typeModel = VehicleType(name: vt.name, vehicles: [])
-            context.insert(typeModel)
-            vehicleTypeMap[vt.name] = typeModel
+        for vehicleType in importModel.vehicleTypes {
+            let typeModel = VehicleType(name: vehicleType.name, vehicles: [])
+            context.insert(typeModel) // insert the data object into the context
+            // Key is an unique identifier, which is reflected in the Data
+            // models
+            vehicleTypeMap[vehicleType.name] = typeModel
         }
         
         var dealerMap: [String: Dealer] = [:]
-        for d in importModel.dealers {
+        for data in importModel.dealers {
             let dealer = Dealer(
-                name: d.name,
-                address: d.address,
-                latitude: d.latitude,
-                longitude: d.longitude,
-                email: d.email,
-                managerName: d.managerName,
-                registrationDate: d.registrationDate,
-                cancelationPolicy: d.cancelationPolicy,
+                name: data.name,
+                address: data.address,
+                latitude: data.latitude,
+                longitude: data.longitude,
+                email: data.email,
+                managerName: data.managerName,
+                registrationDate: data.registrationDate,
+                cancelationPolicy: data.cancelationPolicy,
                 vehicles: []
             )
             context.insert(dealer)
-            dealerMap[d.email] = dealer
+            dealerMap[data.email] = dealer
         }
         
         var vehicleMap: [String: Vehicle] = [:]
-        for v in importModel.vehicles {
-            guard let dealer = dealerMap[v.dealerEmail],
-                  let vehicleType = vehicleTypeMap[v.vehicleType],
-                  let status = VehicleStatus(rawValue: v.vehicleStatus) else {
+        for data in importModel.vehicles {
+            guard let dealer = dealerMap[data.dealerEmail],
+                  let vehicleType = vehicleTypeMap[data.vehicleType],
+                  let status = VehicleStatus(rawValue: data.vehicleStatus)
+            else {
                 continue
             }
             let vehicle = Vehicle(
                 dealer: dealer,
                 vehicleType: vehicleType,
-                modelName: v.modelName,
-                brandName: v.brandName,
-                createdYear: v.createdYear,
-                mileage: v.mileage,
-                capacity: v.capacity,
-                fuelType: v.fuelType,
-                pricePerDay: v.pricePerDay,
-                licensePlate: v.licensePlate,
+                modelName: data.modelName,
+                brandName: data.brandName,
+                createdYear: data.createdYear,
+                mileage: data.mileage,
+                capacity: data.capacity,
+                fuelType: data.fuelType,
+                pricePerDay: data.pricePerDay,
+                licensePlate: data.licensePlate,
                 vehicleStatus: status,
-                imageUrls: v.imageUrls,
-                vehicleDescription: v.vehicleDescription
+                imageUrls: data.imageUrls,
+                vehicleDescription: data.vehicleDescription
             )
             context.insert(vehicle)
-            vehicleMap[v.licensePlate] = vehicle
+            vehicleMap[data.licensePlate] = vehicle
         }
         
         var userMap: [String: User] = [:]
-        for u in importModel.users {
+        for data in importModel.users {
             let user = User(
-                name: u.name,
-                email: u.email,
-                phone: u.phone,
-                passwordHash: u.passwordHash
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                passwordHash: data.passwordHash
             )
             context.insert(user)
-            userMap[u.email] = user
+            userMap[data.email] = user
         }
         
-        for b in importModel.bookings {
-            guard let user = userMap[b.userEmail],
-                  let dealer = dealerMap[b.dealerEmail],
-                  let vehicle = vehicleMap[b.vehicleLicense],
-                  let status = BookingStatus(rawValue: b.bookingStatus) else {
+        for data in importModel.bookings {
+            guard let user = userMap[data.userEmail],
+                  let dealer = dealerMap[data.dealerEmail],
+                  let vehicle = vehicleMap[data.vehicleLicense],
+                  let status = BookingStatus(rawValue: data.bookingStatus)
+            else {
                 continue
             }
-            
-            let booking = Booking(
-                user: user,
-                dealer: dealer,
-                vehicle: vehicle,
-                startDate: b.startDate,
-                endDate: b.endDate,
-                totalPrice: b.totalPrice,
-                bookingStatus: status
+            context.insert(
+                Booking(
+                    user: user,
+                    dealer: dealer,
+                    vehicle: vehicle,
+                    startDate: data.startDate,
+                    endDate: data.endDate,
+                    totalPrice: data.totalPrice,
+                    bookingStatus: status
+                )
             )
-            context.insert(booking)
         }
         
         print("Data imported successfully")

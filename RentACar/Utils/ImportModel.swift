@@ -1,5 +1,6 @@
 import Foundation
 
+/// A model to wrap all the JOSN models
 struct ImportModel: Codable {
     let vehicleTypes: [VehicleTypeJSON]
     let dealers: [DealerJSON]
@@ -7,6 +8,7 @@ struct ImportModel: Codable {
     let users: [UserJSON]
     let bookings: [BookingJSON]
     
+    /// Read json file and map it to an instant of ImportModel
     static func fetchMockData() -> ImportModel? {
         guard let url = Bundle.main.url(
             forResource: "mock-data", withExtension: "json") else {
