@@ -12,7 +12,7 @@ struct VehicleJSON: Codable {
     let pricePerDay: Double
     let licensePlate: String
     let vehicleStatus: String
-    let imageUrls: [String]
+    let imageNames: [String]
     let vehicleDescription: String?
 }
 

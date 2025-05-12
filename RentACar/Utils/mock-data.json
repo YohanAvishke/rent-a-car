@@ -1,11 +1,7 @@
 {
     "vehicleTypes": [
-        {
-            "name": "SUV"
-        },
-        {
-            "name": "Sedan"
-        }
+        { "name": "SUV" },
+        { "name": "Sedan" }
     ],
     "dealers": [
         {
@@ -16,7 +12,7 @@
             "email": "sydney@autorentals.com",
             "managerName": "Emily Watson",
             "registrationDate": "2023-05-01T00:00:00Z",
-            "cancelationPolicy": "Full refund up to 24 hours before rental."
+            "cancelationPolicy": "Cancellations made more than 24 hours prior to pickup are eligible for a full refund. Cancellations made within 24 hours will incur a 15% fee. No-shows are non-refundable."
         },
         {
             "name": "Melbourne Drive Co",
@@ -26,7 +22,7 @@
             "email": "melbourne@driveco.com",
             "managerName": "James Thompson",
             "registrationDate": "2023-05-10T00:00:00Z",
-            "cancelationPolicy": "Cancellations within 12 hours may incur a fee."
+            "cancelationPolicy": "Customers can cancel up to 12 hours before pickup for a 90% refund. Cancellations under 12 hours are subject to a 25% cancellation fee. In the event of a no-show, the full rental charge applies."
         },
         {
             "name": "Brisbane Car Express",
@@ -36,7 +32,7 @@
             "email": "brisbane@carexpress.com",
             "managerName": "Olivia Chen",
             "registrationDate": "2023-06-15T00:00:00Z",
-            "cancelationPolicy": "Full refund up to 24 hours before rental."
+            "cancelationPolicy": "Full refunds are available for cancellations made more than 24 hours before pickup. A 10% processing fee applies for cancellations between 12 and 24 hours. No refund is given if canceled within 12 hours or in case of no-show."
         },
         {
             "name": "Adelaide Vehicle Hub",
@@ -46,7 +42,7 @@
             "email": "adelaide@vehiclehub.com",
             "managerName": "Liam Nguyen",
             "registrationDate": "2023-07-20T00:00:00Z",
-            "cancelationPolicy": "Cancellations may incur a fee."
+            "cancelationPolicy": "Cancellations made more than 48 hours in advance are fully refundable. Between 24–48 hours, a 20% fee applies. Under 24 hours, the cancellation fee is 40%. No refund for missed pickups."
         },
         {
             "name": "Perth Wheels",
@@ -56,7 +52,7 @@
             "email": "perth@wheels.com",
             "managerName": "Chloe Robinson",
             "registrationDate": "2023-08-01T00:00:00Z",
-            "cancelationPolicy": "Full refund up to 24 hours before rental."
+            "cancelationPolicy": "A full refund is granted if canceled at least 24 hours before pickup. For same-day cancellations, a fixed fee of $50 applies. No refund is offered for cancellations within 2 hours of pickup."
         }
     ],
     "vehicles": [
@@ -72,8 +68,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE101",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "model_x.jpg"
+            "imageNames": [
+                "modelx"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -89,8 +85,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI102",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "outlander.jpg"
+            "imageNames": [
+                "outlander"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -106,8 +102,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA103",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "cx-5.jpg"
+            "imageNames": [
+                "cx5"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -123,8 +119,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO104",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "camry.jpg"
+            "imageNames": [
+                "camry"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -140,8 +136,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO105",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "accord.jpg"
+            "imageNames": [
+                "accord"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -157,8 +153,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE201",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "model_x.jpg"
+            "imageNames": [
+                "modelx_2"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -174,8 +170,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI202",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "outlander.jpg"
+            "imageNames": [
+                "outlander_1"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -191,8 +187,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA203",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "cx-5.jpg"
+            "imageNames": [
+                "cx5_1"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -208,8 +204,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO204",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "camry.jpg"
+            "imageNames": [
+                "camry_1"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -225,8 +221,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO205",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "accord.jpg"
+            "imageNames": [
+                "accord_1"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -242,8 +238,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE301",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "model_x.jpg"
+            "imageNames": [
+                "modelx_3"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -259,8 +255,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI302",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "outlander.jpg"
+            "imageNames": [
+                "outlander_2"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -276,8 +272,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA303",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "cx-5.jpg"
+            "imageNames": [
+                "cx5_2"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -293,8 +289,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO304",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "camry.jpg"
+            "imageNames": [
+                "camry_2"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -310,8 +306,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO305",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "accord.jpg"
+            "imageNames": [
+                "accord_2"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -327,8 +323,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE401",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "model_x.jpg"
+            "imageNames": [
+                "modelx_1"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -344,8 +340,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI402",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "outlander.jpg"
+            "imageNames": [
+                "outlander_3"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -361,8 +357,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA403",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "cx-5.jpg"
+            "imageNames": [
+                "cx5_3"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -378,8 +374,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO404",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "camry.jpg"
+            "imageNames": [
+                "camry_3"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -395,8 +391,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO405",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "accord.jpg"
+            "imageNames": [
+                "accord_3"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -412,8 +408,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE501",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "model_x.jpg"
+            "imageNames": [
+                "modelx_4"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -429,8 +425,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI502",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "outlander.jpg"
+            "imageNames": [
+                "outlander_4"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -446,8 +442,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA503",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "cx-5.jpg"
+            "imageNames": [
+                "cx5_4"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -463,8 +459,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO504",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "camry.jpg"
+            "imageNames": [
+                "camry_4"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -480,8 +476,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO505",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "accord.jpg"
+            "imageNames": [
+                "accord_4"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         }

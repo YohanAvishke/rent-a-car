@@ -21,8 +21,8 @@ class Vehicle {
     @Attribute(.unique)
     var licensePlate: String
     var vehicleStatus: VehicleStatus
-    @Attribute(originalName: "imageUrls")
-    var imageUrls: [String]
+    @Attribute(originalName: "imageNames")
+    var imageNames: [String]
     var vehicleDescription: String?
     @Relationship(deleteRule: .cascade, inverse: \Booking.vehicle)
     var bookings: [Booking]?
@@ -31,7 +31,7 @@ class Vehicle {
          brandName: String, createdYear: Int, mileage: Int? = nil,
          capacity: Int? = nil, fuelType: String, pricePerDay: Double,
          licensePlate: String, vehicleStatus: VehicleStatus,
-         imageUrls: [String], vehicleDescription: String? = nil,
+         imageNames: [String], vehicleDescription: String? = nil,
          bookings: [Booking]? = nil) {
         self.dealer = dealer
         self.vehicleType = vehicleType
@@ -44,7 +44,7 @@ class Vehicle {
         self.pricePerDay = pricePerDay
         self.licensePlate = licensePlate
         self.vehicleStatus = vehicleStatus
-        self.imageUrls = imageUrls
+        self.imageNames = imageNames
         self.vehicleDescription = vehicleDescription
         self.bookings = bookings
     }
