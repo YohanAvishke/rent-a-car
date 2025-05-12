@@ -1,15 +1,9 @@
-//
-//  RegisterView.swift
-//  RentACar
-//
-//  Created by Gavin Li on 5/5/2025.
-//
-
-
 import SwiftUI
+import SwiftData
 
 struct RegisterView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var userManager: UserManager
 
     @State private var name: String = ""
     @State private var email: String = ""
@@ -54,8 +48,8 @@ struct RegisterView: View {
                     .padding(.horizontal)
 
                 Button(action: {
-                    // TODO: Sign Up Logic
                     print("Registering user: \(name), \(email)")
+                    userManager.register(name: name, email: email, phone: phone, password: password)
                     dismiss()
                 }) {
                     Text("Sign Up")

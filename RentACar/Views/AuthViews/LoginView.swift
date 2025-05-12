@@ -1,10 +1,3 @@
-//
-//  LoginView.swift
-//  RentACar
-//
-//  Created by Gavin Li on 5/5/2025.
-//
-
 import SwiftUI
 import SwiftUI
 
@@ -12,6 +5,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showRegister = false
+    @EnvironmentObject var userManager: UserManager
 
     var body: some View {
         NavigationView {
@@ -45,8 +39,8 @@ struct LoginView: View {
 
                 // login button
                 Button(action: {
-                    // TODO: login logic
                     print("Login with email: \(email) and password: \(password)")
+                    userManager.login(email: email, password: password)
                 }) {
                     Text("Log In")
                         .font(.headline)
@@ -76,8 +70,3 @@ struct LoginView: View {
         }
     }
 }
-
-#Preview {
-    LoginView()
-}
-
