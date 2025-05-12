@@ -58,7 +58,7 @@ final class DataImporter {
                 pricePerDay: data.pricePerDay,
                 licensePlate: data.licensePlate,
                 vehicleStatus: status,
-                imageUrls: data.imageUrls,
+                imageNames: data.imageNames,
                 vehicleDescription: data.vehicleDescription
             )
             context.insert(vehicle)

@@ -68,8 +68,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE101",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1VGK8daim62Frq3ZgCtAaehAVoFHwg9yJ"
+            "imageNames": [
+                "modelx"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -85,8 +85,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI102",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1OBRCDfeFU1xZHpZYu-T8Jq4ciesDeYXF"
+            "imageNames": [
+                "outlander"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -102,8 +102,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA103",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1R_vgkcqOUg3dJM7V5Kv16a4nK06wUsbe"
+            "imageNames": [
+                "cx5"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -119,8 +119,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO104",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1n-6NHTERck7SyayaW1-8BKqro7woiUzN"
+            "imageNames": [
+                "camry"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -136,8 +136,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO105",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1XtxvF7bU1ec3r-nLI8fOC0cQzmBCZsbE"
+            "imageNames": [
+                "accord"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -153,8 +153,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE201",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1cCMQD9Dm5SCxD5NtrGk-74FyJr_IS_d4"
+            "imageNames": [
+                "modelx_2"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -170,8 +170,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI202",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=12g__4i53tsMDT_XSMKPfAVzedySwoGJF"
+            "imageNames": [
+                "outlander_1"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -187,8 +187,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA203",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=18QOX8RWS_EzB_cWPBGPy3cAHDN2Bh76z"
+            "imageNames": [
+                "cx5_1"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -204,8 +204,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO204",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1Ty9dXsUHBrTbzjYWmg2-_eNP67Wl3S1J"
+            "imageNames": [
+                "camry_1"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -221,8 +221,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO205",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1wtyzv3ktcKFm8u9mOdfYxxMV3Hu0BX0f"
+            "imageNames": [
+                "accord_1"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -238,8 +238,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE301",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1vHB9QwIHVxSQX5Num5HQu7qucMCqiHYh"
+            "imageNames": [
+                "modelx_3"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -255,8 +255,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI302",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=13UPpFi6pegJvE2_LQHTd-r6KlbsbIQf8"
+            "imageNames": [
+                "outlander_2"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -272,8 +272,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA303",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1pw3C_tlqb-wu5F2vB8NzvhwL5OdTwd7d"
+            "imageNames": [
+                "cx5_2"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -289,8 +289,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO304",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1PZP5OS7i-y3D2McnZZsfhaYS9zjrBqgN"
+            "imageNames": [
+                "camry_2"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -306,8 +306,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO305",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1Dw5AwAa6zeRDBUJNHDj-nhamabR2Mrj-"
+            "imageNames": [
+                "accord_2"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -323,8 +323,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE401",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1qW4lJp5cdTGH2_UsbwRsoAe2zDoTTcYR"
+            "imageNames": [
+                "modelx_1"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -340,8 +340,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI402",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1xhPgJpxMJcwh_Z6s-B9Y9Cb6ek1h8Kvm"
+            "imageNames": [
+                "outlander_3"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -357,8 +357,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA403",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1znjGucVW93oQlgiZwbpCxowC1-XSDXwd"
+            "imageNames": [
+                "cx5_3"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -374,8 +374,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO404",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1o7zLpFA7T8cURLva9wlK_RmY20EgADrp"
+            "imageNames": [
+                "camry_3"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -391,8 +391,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO405",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1t_qINk719DHfwG7KO-QZBDIql7wPE243"
+            "imageNames": [
+                "accord_3"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         },
@@ -408,8 +408,8 @@
             "pricePerDay": 85.0,
             "licensePlate": "TE501",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1yMYUocLe53k-DHPAEb8XKr2BvaUogEwS"
+            "imageNames": [
+                "modelx_4"
             ],
             "vehicleDescription": "Model X by Tesla is perfect for your journey."
         },
@@ -425,8 +425,8 @@
             "pricePerDay": 95.0,
             "licensePlate": "MI502",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1-AESe-ZrmY0qsBya2JC0UnV5LN59W-SR"
+            "imageNames": [
+                "outlander_4"
             ],
             "vehicleDescription": "Outlander by Mitsubishi is perfect for your journey."
         },
@@ -442,8 +442,8 @@
             "pricePerDay": 105.0,
             "licensePlate": "MA503",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1WdqZKFoGJOpohdBzxuiwJVJ8g0fkh8kk"
+            "imageNames": [
+                "cx5_4"
             ],
             "vehicleDescription": "CX-5 by Mazda is perfect for your journey."
         },
@@ -459,8 +459,8 @@
             "pricePerDay": 115.0,
             "licensePlate": "TO504",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1DREjmv6UGUos8ppd2cGZMzM0-ZVxISBB"
+            "imageNames": [
+                "camry_4"
             ],
             "vehicleDescription": "Camry by Toyota is perfect for your journey."
         },
@@ -476,8 +476,8 @@
             "pricePerDay": 125.0,
             "licensePlate": "HO505",
             "vehicleStatus": "Available",
-            "imageUrls": [
-                "https://drive.google.com/uc?export=view&id=1KKQVQL0IUKZqBmhJDWHAPU8D0kmzhcJ-"
+            "imageNames": [
+                "accord_4"
             ],
             "vehicleDescription": "Accord by Honda is perfect for your journey."
         }

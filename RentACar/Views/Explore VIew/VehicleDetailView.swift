@@ -17,32 +17,21 @@ struct VehicleDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // Image
-                if let imageUrlString = vehicle.imageUrls.first, let url = URL(string: imageUrlString) {
-                    AsyncImage(url: url) { phase in
-                        switch phase {
-                            case .empty:
-                                ProgressView().frame(height: 220)
-                            case .success(let image):
-                                image
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(height: 220)
-                                    .clipped()
-                            case .failure:
-                                Image(systemName: "photo.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 220)
-                                    .foregroundColor(.gray)
-                            @unknown default:
-                                EmptyView()
-                        }
-                    }
-                    .cornerRadius(12)
+                if let imageName = vehicle.imageNames.first {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 200)
+                        .clipped()
+                        .cornerRadius(12)
+                } else {
+                    Image(systemName: "photo.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                        .foregroundColor(.gray)
                 }
                 
-                // Vehicle Title & Status
                 VStack(alignment: .leading, spacing: 4) {
                     Text("\(vehicle.brandName) \(vehicle.modelName) \(String(vehicle.createdYear))")
                         .font(.title)
@@ -55,7 +44,6 @@ struct VehicleDetailView: View {
                         .cornerRadius(6)
                 }
                 
-                // Description
                 if let desc = vehicle.vehicleDescription {
                     Text(desc)
                         .font(.body)
@@ -64,7 +52,6 @@ struct VehicleDetailView: View {
                 
                 Divider()
                 
-                // Vehicle Specs
                 Group {
                     HStack {
                         Label("\(vehicle.fuelType)", systemImage: "fuelpump")
@@ -82,7 +69,6 @@ struct VehicleDetailView: View {
                 
                 Divider()
                 
-                // Pricing
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Price")
                         .font(.headline)
@@ -93,7 +79,6 @@ struct VehicleDetailView: View {
                 
                 Divider()
                 
-                // Dealer Info
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Dealer Information")
                         .font(.headline)
@@ -116,7 +101,6 @@ struct VehicleDetailView: View {
                 
                 Divider()
                 
-                // Cancellation Policy
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Cancellation Policy")
                         .font(.headline)

@@ -5,30 +5,19 @@ struct VehicleCardView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if let urlString = vehicle.imageUrls.first,
-               let url = URL(string: urlString) {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                        case .empty:
-                            ProgressView()
-                                .frame(height: 200)
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 200)
-                                .clipped()
-                                .cornerRadius(12)
-                        case .failure:
-                            Image(systemName: "photo.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 200)
-                                .foregroundColor(.gray)
-                        @unknown default:
-                            EmptyView()
-                    }
-                }
+            if let imageName = vehicle.imageNames.first {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+                    .cornerRadius(12)
+            } else {
+                Image(systemName: "photo.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 200)
+                    .foregroundColor(.gray)
             }
             
             Text("\(vehicle.brandName) \(vehicle.modelName) \(vehicle.createdYear)")
