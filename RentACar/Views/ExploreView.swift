@@ -1,13 +1,20 @@
 import SwiftUI
 import SwiftData
+import MapKit
 
 struct ExploreView: View {
     @State private var searchText: String = ""
     @State private var selectedFilter: String? = nil
+    
     @Query var vehicles: [Vehicle]
+    
+    @State private var currentPage: Int = 1
+    private let pageSize: Int = 5
+    
     let filters = ["All", "Mitsubishi", "Tesla", "BMW", "Price < 200"]
     
-    var filteredVehicles: [Vehicle] {
+    // Full filter logic
+    var fullFilteredList: [Vehicle] {
         vehicles.filter { vehicle in
             let name = "\(vehicle.brandName) \(vehicle.modelName) \(vehicle.createdYear)"
             let matchesSearch = searchText.isEmpty || name.localizedCaseInsensitiveContains(searchText)
@@ -30,15 +37,21 @@ struct ExploreView: View {
         }
     }
     
+    // Paginated result
+    var filteredVehicles: [Vehicle] {
+        let endIndex = min(currentPage * pageSize, fullFilteredList.count)
+        return Array(fullFilteredList.prefix(endIndex))
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                // Search
+                // Search field
                 TextField("Search cars...", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
                 
-                // Filters
+                // Filter bar
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(filters, id: \.self) { filter in
@@ -58,11 +71,28 @@ struct ExploreView: View {
                 }
                 .padding(.bottom, 8)
                 
-                // Vehicle cards
+                // Vehicle List
                 ScrollView {
                     VStack(spacing: 20) {
                         ForEach(filteredVehicles) { vehicle in
+                            //                            NavigationLink(destination: VehicleDetailView(vehicle: vehicle)) {
+                            //                                VehicleCardView(vehicle: vehicle)
+                            //                            }
+                            //                            .buttonStyle(PlainButtonStyle())
                             VehicleCardView(vehicle: vehicle)
+                        }
+                        
+                        // Load More
+                        if filteredVehicles.count < fullFilteredList.count {
+                            Button("Load More") {
+                                currentPage += 1
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
                         }
                     }
                     .padding(.horizontal)
@@ -71,6 +101,8 @@ struct ExploreView: View {
                 Spacer()
             }
             .navigationTitle("Explore")
+            .onChange(of: searchText) { currentPage = 1 }
+            .onChange(of: selectedFilter) { currentPage = 1 }
         }
     }
 }
@@ -91,6 +123,7 @@ struct VehicleCardView: View {
             
             Text("\(vehicle.brandName) \(vehicle.modelName) \(vehicle.createdYear)")
                 .font(.headline)
+                .foregroundColor(.primary)
             
             Text(vehicle.dealer.address)
                 .font(.subheadline)
