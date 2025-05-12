@@ -2,22 +2,21 @@ import SwiftUI
 import SwiftData
 import MapKit
 
+// Todo this view need to follow MVVM principles
 struct ExploreView: View {
     @State private var searchText: String = ""
     @State private var selectedFilter: String? = nil
-    
-    @Query var vehicles: [Vehicle]
-    
     @State private var currentPage: Int = 1
-    private let pageSize: Int = 5
+    @Query var vehicles: [Vehicle]
+    private let pageSize: Int = 5 // maximum number of vehicles loaded
+    private let filters = ["All", "Mitsubishi", "Tesla", "BMW", "Price < 200"]
     
-    let filters = ["All", "Mitsubishi", "Tesla", "BMW", "Price < 200"]
-    
-    // Full filter logic
+    // Manage filteration logic
     var fullFilteredList: [Vehicle] {
         vehicles.filter { vehicle in
             let name = "\(vehicle.brandName) \(vehicle.modelName) \(vehicle.createdYear)"
-            let matchesSearch = searchText.isEmpty || name.localizedCaseInsensitiveContains(searchText)
+            let matchesSearch = searchText.isEmpty || name
+                .localizedCaseInsensitiveContains(searchText)
             let matchesFilter: Bool
             if let filter = selectedFilter {
                 switch filter {
@@ -37,7 +36,7 @@ struct ExploreView: View {
         }
     }
     
-    // Paginated result
+    // Manage pagination logic
     var filteredVehicles: [Vehicle] {
         let endIndex = min(currentPage * pageSize, fullFilteredList.count)
         return Array(fullFilteredList.prefix(endIndex))
@@ -46,12 +45,10 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                // Search field
                 TextField("Search cars...", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
                 
-                // Filter bar
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(filters, id: \.self) { filter in
@@ -61,8 +58,16 @@ struct ExploreView: View {
                                 Text(filter)
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 8)
-                                    .background(selectedFilter == filter ? Color.blue : Color(.systemGray6))
-                                    .foregroundColor(selectedFilter == filter ? .white : .black)
+                                    .background(
+                                        selectedFilter == filter
+                                        ? Color.blue
+                                        : Color(.systemGray6)
+                                    )
+                                    .foregroundColor(
+                                        selectedFilter == filter
+                                        ? .white
+                                        : .black
+                                    )
                                     .cornerRadius(20)
                             }
                         }
@@ -71,18 +76,13 @@ struct ExploreView: View {
                 }
                 .padding(.bottom, 8)
                 
-                // Vehicle List
                 ScrollView {
                     VStack(spacing: 20) {
                         ForEach(filteredVehicles) { vehicle in
-                            //                            NavigationLink(destination: VehicleDetailView(vehicle: vehicle)) {
-                            //                                VehicleCardView(vehicle: vehicle)
-                            //                            }
-                            //                            .buttonStyle(PlainButtonStyle())
+                            // Todo add navigation to detail view
                             VehicleCardView(vehicle: vehicle)
                         }
                         
-                        // Load More
                         if filteredVehicles.count < fullFilteredList.count {
                             Button("Load More") {
                                 currentPage += 1
@@ -106,52 +106,3 @@ struct ExploreView: View {
         }
     }
 }
-
-struct VehicleCardView: View {
-    let vehicle: Vehicle
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            if let urlString = vehicle.imageUrls.first, let url = URL(string: urlString) {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                        case .empty:
-                            ProgressView()
-                                .frame(height: 200)
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 200)
-                                .clipped()
-                                .cornerRadius(12)
-                        case .failure:
-                            Image(systemName: "photo.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 200)
-                                .foregroundColor(.gray)
-                        @unknown default:
-                            EmptyView()
-                    }
-                }
-            }
-            
-            Text("\(vehicle.brandName) \(vehicle.modelName) \(vehicle.createdYear)")
-                .font(.headline)
-                .foregroundColor(.primary)
-            
-            Text(vehicle.dealer.address)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            
-            Text("$\(Int(vehicle.pricePerDay))/day")
-                .font(.title3)
-                .bold()
-        }
-        .background(Color.white)
-        .cornerRadius(12)
-        .shadow(radius: 4)
-    }
-}
-
