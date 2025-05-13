@@ -1,21 +1,9 @@
-//
-//  BookingHistoryView.swift
-//  RentACar
-//
-//  Created by Gavin Li on 5/8/2025.
-//
-
 import SwiftUI
+import SwiftData
 
 struct BookingHistoryView: View {
     @EnvironmentObject var userManager: UserManager
-    
-    // 示例预订历史
-    let bookings = [
-        BookingHistoryItem(id: "1", vehicleName: "Tesla Model 3", startDate: Date(), endDate: Date().addingTimeInterval(86400*3), status: .Completed),
-        BookingHistoryItem(id: "2", vehicleName: "BMW X5", startDate: Date().addingTimeInterval(86400*7), endDate: Date().addingTimeInterval(86400*10), status: .Confirmed),
-        BookingHistoryItem(id: "3", vehicleName: "Mitsubishi Outlander", startDate: Date().addingTimeInterval(-86400*10), endDate: Date().addingTimeInterval(-86400*7), status: .Cancelled)
-    ]
+    @Query var bookings: [Booking]
     
     var body: some View {
         List {
@@ -28,19 +16,11 @@ struct BookingHistoryView: View {
     }
 }
 
-struct BookingHistoryItem: Identifiable {
-    let id: String
-    let vehicleName: String
-    let startDate: Date
-    let endDate: Date
-    let status: BookingStatus
-}
-
 struct BookingHistoryItemView: View {
-    let booking: BookingHistoryItem
+    let booking: Booking
     
     var statusColor: Color {
-        switch booking.status {
+        switch booking.bookingStatus {
         case .Completed:
             return .green
         case .Confirmed:
@@ -55,10 +35,10 @@ struct BookingHistoryItemView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                Text(booking.vehicleName)
+                Text(booking.vehicle.modelName)
                     .font(.headline)
                 Spacer()
-                Text(booking.status.rawValue)
+                Text(booking.bookingStatus.rawValue)
                     .foregroundColor(statusColor)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
@@ -74,9 +54,8 @@ struct BookingHistoryItemView: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
-            if booking.status == .Confirmed {
+            if booking.bookingStatus == .Confirmed {
                 Button("Cancle booking") {
-                    // 取消预订逻辑
                 }
                 .foregroundColor(.red)
                 .padding(.top, 4)
@@ -89,12 +68,5 @@ struct BookingHistoryItemView: View {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter.string(from: date)
-    }
-}
-
-#Preview {
-    NavigationView {
-        BookingHistoryView()
-            .environmentObject(UserManager())
     }
 }

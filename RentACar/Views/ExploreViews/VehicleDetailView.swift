@@ -1,9 +1,18 @@
 import SwiftUI
+import SwiftData
 import MapKit
 
 struct VehicleDetailView: View {
     let vehicle: Vehicle
+    @Environment(\.modelContext) private var context
+    @EnvironmentObject var userManager: UserManager
+    
+    @State private var startDate: Date = Date()
+    @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+    
     @State private var cameraPosition: MapCameraPosition
+    @State private var bookingConfirmed = false
+    @State private var bookingError = false
     
     init(vehicle: Vehicle) {
         self.vehicle = vehicle
@@ -12,6 +21,35 @@ struct VehicleDetailView: View {
             span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         )
         _cameraPosition = State(initialValue: .region(region))
+    }
+    
+    var numberOfDays: Int {
+        let days = Calendar.current.dateComponents([.day], from: startDate, to: endDate).day ?? 0
+        return max(days, 1)
+    }
+    
+    var totalPrice: Double {
+        Double(numberOfDays) * vehicle.pricePerDay
+    }
+    
+    private func createBooking() {
+        do {
+            let booking = Booking(
+                user: userManager.currentUser!,
+                dealer: vehicle.dealer,
+                vehicle: vehicle,
+                startDate: startDate,
+                endDate: endDate,
+                totalPrice: totalPrice,
+                bookingStatus: .Confirmed
+            )
+            context.insert(booking)
+            try context.save()
+            bookingConfirmed = true
+        } catch {
+            bookingError = true
+            print("Failed to save booking: \(error)")
+        }
     }
     
     var body: some View {
@@ -32,76 +70,78 @@ struct VehicleDetailView: View {
                         .foregroundColor(.gray)
                 }
                 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("\(vehicle.brandName) \(vehicle.modelName) \(String(vehicle.createdYear))")
-                        .font(.title)
-                        .bold()
-                    
-                    Text(vehicle.vehicleStatus.rawValue)
-                        .font(.caption)
-                        .padding(6)
-                        .background(vehicle.vehicleStatus == .Available ? Color.green.opacity(0.2) : Color.orange.opacity(0.2))
-                        .cornerRadius(6)
-                }
+                // Vehicle Info
+                Text("\(vehicle.brandName) \(vehicle.modelName) \(String(vehicle.createdYear))")
+                    .font(.title)
+                    .bold()
                 
-                if let desc = vehicle.vehicleDescription {
-                    Text(desc)
-                        .font(.body)
-                        .foregroundColor(.secondary)
-                }
+                Text(vehicle.vehicleDescription ?? "No description available")
+                    .font(.body)
+                    .foregroundColor(.secondary)
                 
                 Divider()
                 
                 Group {
-                    HStack {
-                        Label("\(vehicle.fuelType)", systemImage: "fuelpump")
-                        Spacer()
-                        Label("\(vehicle.capacity ?? 0) seats", systemImage: "person.3.fill")
-                    }
-                    HStack {
-                        Label("\(vehicle.mileage ?? 0) km", systemImage: "speedometer")
-                        Spacer()
-                        Label("License: \(vehicle.licensePlate)", systemImage: "car.fill")
-                    }
+                    Label("\(vehicle.fuelType)", systemImage: "fuelpump")
+                    Label("\(vehicle.mileage ?? 0) km", systemImage: "speedometer")
+                    Label("\(vehicle.capacity ?? 0) seats", systemImage: "person.3.fill")
+                    Label("License: \(vehicle.licensePlate)", systemImage: "car.fill")
                 }
                 .font(.subheadline)
-                .padding(.vertical, 4)
                 
                 Divider()
                 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Price")
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Dealer Info")
                         .font(.headline)
-                    Text("$\(Int(vehicle.pricePerDay)) per day")
+                    Label(vehicle.dealer.name, systemImage: "building.2")
+                    Label(vehicle.dealer.email, systemImage: "envelope")
+                    Label(vehicle.dealer.address, systemImage: "mappin")
+                    Label("Manager: \(vehicle.dealer.managerName)", systemImage: "person")
+                }
+                
+                Map(position: $cameraPosition) {
+                    Marker(vehicle.dealer.name, coordinate: CLLocationCoordinate2D(
+                        latitude: vehicle.dealer.latitude,
+                        longitude: vehicle.dealer.longitude
+                    ))
+                }
+                .frame(height: 180)
+                .cornerRadius(10)
+                
+                Divider()
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Book Vehicle")
+                        .font(.headline)
+                    
+                    DatePicker("Start Date", selection: $startDate, displayedComponents: .date)
+                    DatePicker("End Date", selection: $endDate, in: startDate..., displayedComponents: .date)
+                    
+                    Text("Total Days: \(numberOfDays)")
+                    Text("Total Price: $\(Int(totalPrice))")
                         .font(.title3)
                         .bold()
                 }
                 
-                Divider()
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Dealer Information")
-                        .font(.headline)
-                    
-                    Label(vehicle.dealer.name, systemImage: "building.2")
-                    Label(vehicle.dealer.address, systemImage: "mappin")
-                    Label(vehicle.dealer.email, systemImage: "envelope")
-                    Label("Manager: \(vehicle.dealer.managerName)", systemImage: "person.fill")
-                    
-                    Map(position: $cameraPosition) {
-                        Marker(vehicle.dealer.name, coordinate: CLLocationCoordinate2D(
-                            latitude: vehicle.dealer.latitude,
-                            longitude: vehicle.dealer.longitude
-                        ))
-                    }
-                    .frame(height: 180)
-                    .cornerRadius(10)
+                Button("Book Now") {
+                    createBooking()
                 }
-                .font(.subheadline)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                
+                if bookingConfirmed {
+                    Text("Booking Confirmed!").foregroundColor(.green)
+                } else if bookingError {
+                    Text("Failed to book. Please try again.").foregroundColor(.red)
+                }
                 
                 Divider()
                 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading) {
                     Text("Cancellation Policy")
                         .font(.headline)
                     Text(vehicle.dealer.cancelationPolicy)
